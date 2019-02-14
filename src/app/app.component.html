@@ -1,5 +1,6 @@
 <app-main-nav>
-  <main>
-<router-outlet></router-outlet>
-  </main>
+  <div [@routeAnimations]="prepareRoute(outlet)">
+  <!-- <app-spinner></app-spinner> -->
+<router-outlet #outlet="outlet"></router-outlet>
+  </div>
 </app-main-nav>

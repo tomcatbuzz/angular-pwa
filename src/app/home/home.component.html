@@ -1,7 +1,17 @@
-<mat-card>
-  <mat-card-header>
+<mat-card class="home-card">
+  <mat-card-header class="home-card__header">
+
     <mat-card-title>Web Developer</mat-card-title>
     <mat-card-subtitle>and more</mat-card-subtitle>
-    <img mat-card-avatar>
   </mat-card-header>
+  <img mat-card-image src="../../assets/images/pexels-photo-547115.jpeg">
+  <mat-card-content>
+    <p>
+      This is my Home page--------> Gateway to more........
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button (click)="onPopup()">SHARE</button>
+  </mat-card-actions>
 </mat-card>

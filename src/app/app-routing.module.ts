@@ -1,31 +1,44 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { ProjectsComponent } from './projects/projects.component';
+import { AuthGuard } from './auth/auth.guard';
+import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   redirectTo: 'home',
+  //   pathMatch: 'full',
+  //   data: { animation: 'home'}
+  // },
   {
     path: '',
-    component: HomeComponent
+    loadChildren: './home/home.module#HomeModule',
+    data: { animation: 'home'}
   },
   {
     path: 'about',
-    component: AboutComponent
+    loadChildren: './about/about.module#AboutModule',
+    data: { animation: 'about'}
+  },
+  { path: 'todo',
+    loadChildren: './todo/todo.module#TodoPageModule',
+    // canActivate: [AuthGuard]
   },
   {
     path: 'contact',
-    component: ContactComponent
+    loadChildren: './contact/contact.module#ContactModule',
+    data: { animation: 'contact'}
   },
-  {
-    path: 'projects',
-    component: ProjectsComponent
-  }
+  { path: 'todo', loadChildren: './todo/todo.module#TodoModule', canLoad: [AuthGuard] }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, {
+    enableTracing: false, // <-- debugging purposes only
+    preloadingStrategy: SelectivePreloadingStrategyService,
+    }
+  )],
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }
