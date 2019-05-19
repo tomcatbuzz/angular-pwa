@@ -9,7 +9,6 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
-import { SpinnerComponent } from './spinner/spinner.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { StoreModule } from '@ngrx/store';
@@ -22,7 +21,6 @@ import { UIService } from './shared/ui.service';
   declarations: [
     AppComponent,
     MainNavComponent,
-    SpinnerComponent
   ],
   imports: [
     BrowserModule,

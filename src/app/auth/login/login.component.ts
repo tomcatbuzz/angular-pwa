@@ -5,6 +5,8 @@ import { UIService } from '../../shared/ui.service';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../app.reducer';
+import { SharedModule } from '../../shared/shared.module';
+import { SpinnerComponent } from '../../spinner/spinner.component';
 
 @Component({
   selector: 'app-login',

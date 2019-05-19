@@ -20,16 +20,15 @@ const routes: Routes = [
     loadChildren: './about/about.module#AboutModule',
     data: { animation: 'about'}
   },
-  { path: 'todo',
-    loadChildren: './todo/todo.module#TodoPageModule',
-    // canActivate: [AuthGuard]
-  },
+  // { path: 'todo',
+  //   loadChildren: './todo/todo.module#TodoPageModule',
+  //   canActivate: [AuthGuard]
+  // },
   {
     path: 'contact',
     loadChildren: './contact/contact.module#ContactModule',
     data: { animation: 'contact'}
-  },
-  { path: 'todo', loadChildren: './todo/todo.module#TodoModule', canLoad: [AuthGuard] }
+  }
 ];
 
 @NgModule({
