@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
 import { MatToolbarModule,
   MatButtonModule,
   MatSidenavModule,
@@ -18,7 +19,6 @@ import { MatToolbarModule,
   MatSortModule,
   MatPaginatorModule,
   MatSnackBarModule,
-  // MatFormField,
   MatRippleModule} from '@angular/material';
 
 @NgModule({
@@ -42,8 +42,8 @@ import { MatToolbarModule,
     MatSortModule,
     MatPaginatorModule,
     MatSnackBarModule,
-    // MatFormField,
-    MatRippleModule
+    MatRippleModule,
+    MatPasswordStrengthModule
   ],
   exports: [
     MatToolbarModule,
@@ -65,8 +65,8 @@ import { MatToolbarModule,
     MatSortModule,
     MatPaginatorModule,
     MatSnackBarModule,
-    // MatFormField,
-    MatRippleModule
+    MatRippleModule,
+    MatPasswordStrengthModule
   ]
 })
 
