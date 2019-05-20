@@ -1,0 +1,26 @@
+<mat-card>
+<mat-list *ngIf="items?.length > 0; else noItems">
+  <mat-list-item *ngFor="let item of items">
+    <h3 matLine>{{item.title}}</h3>
+    <a class="secondary-content"><mat-icon (click)="editItem($event, item)">create</mat-icon>
+      <mat-icon *ngIf="editState && itemToEdit.id == item.id" (click)="clearState()">replay</mat-icon>
+    </a>
+    <p matLine>{{item.description}}</p>
+
+    <div *ngIf="editState && itemToEdit.id == item.id">
+      <mat-form-field (click)="editItem($event, item)">
+        <input matInput placeholder="Title" [(ngModel)]="item.title">
+      </mat-form-field>
+      <mat-form-field (click)="editItem($event, item)">
+        <input matInput placeholder="Description" [(ngModel)]="item.description">
+      </mat-form-field>
+        <button mat-raised-button (click)="updateItem(item)" color="primary">Update Task</button>
+        <button mat-raised-button (click)="deleteItem($event, item)" color="warn">Delete Task</button>
+    </div>
+  </mat-list-item>
+</mat-list>
+<ng-template #noItems>
+  <hr>
+  <h5>There are no items to list</h5>
+</ng-template>
+</mat-card>
