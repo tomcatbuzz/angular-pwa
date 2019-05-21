@@ -19,9 +19,9 @@
       <a mat-list-item *ngIf="!(isAuth$ | async)" routerLink="/login" routerLinkActive="active" (click)="drawer.toggle()">
         <mat-icon>input</mat-icon>
         <span class="nav-caption">Login</span></a>
-      <!-- <a mat-list-item *ngIf="isAuth$ | async" routerLink="/todo" routerLinkActive="active" (click)="drawer.toggle()">
+      <a mat-list-item *ngIf="isAuth$ | async" routerLink="/add-item" routerLinkActive="active" (click)="drawer.toggle()">
         <mat-icon>chat</mat-icon>
-        <span class="nav-caption">Todo</span></a> -->
+        <span class="nav-caption">Notes</span></a>
       <mat-list-item>
         <button *ngIf="isAuth$ | async" mat-icon-button (click)="onLogout()">
           <mat-icon>eject</mat-icon>
@@ -46,7 +46,7 @@
       <a mat-button routerLink="/about" routerLinkActive="active">About</a>
       <a mat-button *ngIf="!(isAuth$ | async)" routerLink="/login" routerLinkActive="active">Login</a>
       <a mat-button *ngIf="!(isAuth$ | async)" routerLink="/signup" routerLinkActive="active">Register</a>
-      <!-- <a mat-button *ngIf="isAuth$ | async" routerLink="/todo" routerLinkActive="active">Todo</a> -->
+      <a mat-button *ngIf="isAuth$ | async" routerLink="/add-item" routerLinkActive="active">Notes</a>
       <a mat-button *ngIf="isAuth$ | async" style="cursor: pointer" (click)="onLogout()">Logout</a>
     </mat-toolbar>
     <ng-content></ng-content>

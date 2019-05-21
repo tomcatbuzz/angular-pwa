@@ -25,6 +25,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { animation: 'add-item' }
   },
+  { path: 'items',
+    loadChildren: './items/items.module#ItemsModule',
+    canActivate: [AuthGuard],
+    data: { animation: 'items' }
+  },
   {
     path: 'contact',
     loadChildren: './contact/contact.module#ContactModule',

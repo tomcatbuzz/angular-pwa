@@ -13,3 +13,12 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 $primary: mat-color($app-primary);
 $accent: mat-color($app-accent);
 $warn: mat-color($app-warn);
+
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+.unicorn-dark-theme {
+  @include angular-material-theme($dark-theme);
+}

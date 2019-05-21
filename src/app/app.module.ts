@@ -16,6 +16,7 @@ import { reducers } from './app.reducer';
 import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
 import { UIService } from './shared/ui.service';
+import { ItemService } from './item.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { UIService } from './shared/ui.service';
     AuthModule,
     StoreModule.forRoot(reducers)
   ],
-  providers: [AuthService, UIService],
+  providers: [AuthService, UIService, ItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
