@@ -13,21 +13,22 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: './home/home.module#HomeModule',
-    data: { animation: 'home'}
+    data: { animation: 'home' }
   },
   {
     path: 'about',
     loadChildren: './about/about.module#AboutModule',
-    data: { animation: 'about'}
+    data: { animation: 'about' }
   },
-  // { path: 'todo',
-  //   loadChildren: './todo/todo.module#TodoPageModule',
-  //   canActivate: [AuthGuard]
-  // },
+  { path: 'add-item',
+    loadChildren: './add-item/add-item.module#AddItemModule',
+    canActivate: [AuthGuard],
+    data: { animation: 'add-item' }
+  },
   {
     path: 'contact',
     loadChildren: './contact/contact.module#ContactModule',
-    data: { animation: 'contact'}
+    data: { animation: 'contact' }
   }
 ];
 
