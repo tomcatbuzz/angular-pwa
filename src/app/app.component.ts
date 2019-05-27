@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { RouterOutlet } from '@angular/router';
 import { AuthService } from './auth/auth.service';
 import { slideInAnimation } from './animations';
@@ -13,9 +12,11 @@ import { slideInAnimation } from './animations';
 export class AppComponent implements OnInit {
   title = 'angularFire-pwa';
 
-  constructor (private authService: AuthService) {}
+  constructor (private authService: AuthService) {
 
-  ngOnInit() {
+  }
+
+  ngOnInit(): void {
     this.authService.initAuthListener();
   }
 

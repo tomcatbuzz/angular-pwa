@@ -19,7 +19,8 @@ import { MatToolbarModule,
   MatSortModule,
   MatPaginatorModule,
   MatSnackBarModule,
-  MatRippleModule} from '@angular/material';
+  MatRippleModule,
+  MatMenuModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { MatToolbarModule,
     MatPaginatorModule,
     MatSnackBarModule,
     MatRippleModule,
-    MatPasswordStrengthModule
+    MatPasswordStrengthModule,
+    MatMenuModule,
   ],
   exports: [
     MatToolbarModule,
@@ -66,7 +68,8 @@ import { MatToolbarModule,
     MatPaginatorModule,
     MatSnackBarModule,
     MatRippleModule,
-    MatPasswordStrengthModule
+    MatPasswordStrengthModule,
+    MatMenuModule,
   ]
 })
 

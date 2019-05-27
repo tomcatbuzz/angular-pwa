@@ -6,7 +6,6 @@ import { Store } from '@ngrx/store';
 import * as fromRoot from '../app.reducer';
 import { AuthService } from '../auth/auth.service';
 
-
 @Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
@@ -21,6 +20,12 @@ export class MainNavComponent implements OnInit {
 
   isAuth$: Observable<boolean>;
 
+  otherTheme = false;
+
+  switchTheme() {
+    this.otherTheme = !this.otherTheme;
+  }
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     private store: Store<fromRoot.State>,
@@ -33,5 +38,4 @@ export class MainNavComponent implements OnInit {
     onLogout() {
       this.authService.logout();
     }
-
 }

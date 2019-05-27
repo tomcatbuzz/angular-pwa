@@ -17,6 +17,7 @@ import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
 import { UIService } from './shared/ui.service';
 import { ItemService } from './item.service';
+import { ThemeSwitcherService } from './theme-switcher.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { ItemService } from './item.service';
     AuthModule,
     StoreModule.forRoot(reducers)
   ],
-  providers: [AuthService, UIService, ItemService],
+  providers: [AuthService, UIService, ItemService, ThemeSwitcherService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
