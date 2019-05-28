@@ -16,6 +16,7 @@ import * as fromRoot from '../../app.reducer';
 export class SignupComponent implements OnInit {
   maxDate;
   isLoading$: Observable<boolean>;
+  showDetails: boolean;
 
   constructor(
     private authService: AuthService,
@@ -27,6 +28,10 @@ export class SignupComponent implements OnInit {
     this.isLoading$ = this.store.select(fromRoot.getIsLoading);
     this.maxDate = new Date();
     this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
+  }
+
+  onStrengthChanged(strength: number) {
+    console.log('password strength = ', strength);
   }
 
   onSubmit(form: NgForm) {

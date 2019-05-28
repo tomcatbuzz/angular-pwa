@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container" [class.purple]="otherTheme">
+<mat-sidenav-container class="sidenav-container" [class.deep-orange]="otherTheme">
   <mat-sidenav
     #drawer
     class="sidenav"
@@ -49,7 +49,7 @@
       <a mat-button *ngIf="isAuth$ | async" routerLink="/add-item" routerLinkActive="active">Notes</a>
       <a mat-button *ngIf="isAuth$ | async" style="cursor: pointer" (click)="onLogout()">Logout</a>
       <span fxFlex="nogrow">
-        <button mat-icon-button [class.purple]="otherTheme">
+        <button mat-icon-button>
           <mat-icon (click)="switchTheme()">format_color_fill</mat-icon>
         </button>
       </span>
