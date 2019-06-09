@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { MainNavComponent } from './main-nav/main-nav.component';
@@ -18,11 +19,15 @@ import { AuthModule } from './auth/auth.module';
 import { UIService } from './shared/ui.service';
 import { ItemService } from './item.service';
 import { ThemeSwitcherService } from './theme-switcher.service';
+import { LoadingScreenService } from './loading-screen.service';
+import { LoadingInterceptor } from './helpers/loading.interceptor';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +40,14 @@ import { ThemeSwitcherService } from './theme-switcher.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AuthModule,
-    StoreModule.forRoot(reducers)
+    StoreModule.forRoot(reducers),
+    HttpClientModule
   ],
-  providers: [AuthService, UIService, ItemService, ThemeSwitcherService],
+  providers: [AuthService, UIService, ItemService, ThemeSwitcherService, LoadingScreenService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoadingInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
